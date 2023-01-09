@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Rubik+80s+Fade&display=swap');
+
+/* ----------------------------------------------------------- */
+/* ------------- [PATTERN RESETS] ---------------------------- */
+/* ----------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------- */
+/* ------------- [ROOT VARIABLES] ---------------------------- */
+/* ----------------------------------------------------------- */
+:root {
+  --backgrond: #000;
+  --text-color: #FFF;
+  --button: #8257E5;
+  --border: #29292E;
+  --border-menu-mobile: #A8A8B3;
+  --text-color-menu-mobile: #E1E1E6;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow-x: hidden;
+  background: var(--backgrond);
+}
+
+/* ----------------------------------------------------------- */
+/* ------------- [PAGE] -------------------------------------- */
+/* ----------------------------------------------------------- */
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+header .menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+header .bar {
+  width: 28px;
+  height: 2px;
+  margin: 3px 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: var(--button);
+}
+
+header .bar:nth-child(2) {
+  width: 60%;
+}
+
+header .bar:nth-child(3) {
+  display: none;
+}
+
+header .menu-btn.active .bar:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+header .menu-btn.active .bar:nth-child(2) {
+  display: none;
+}
+
+header .menu-btn.active .bar:nth-child(3) {
+  display: block;
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+header .navgation {
+  position: fixed;
+  right: -200%;
+  top: 6.5rem;
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+header .navgation.active {
+  right: 0;
+}
+
+header .nav-bar {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.2rem;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background: #000;
+}
+
+header .nav-bar .nav-item {
+  padding: 1rem 2rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--border-menu-mobile);
+}
+
+header .nav-bar .nav-item:nth-child(1) {
+  border-left: 5px solid #8257E5;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------- */
+/* ------------- [MAIN] -------------------------------------- */
+/* ----------------------------------------------------------- */
+
+main {
+  font-family: 'Manrope', sans-serif;
+  width: 100%;
+  color: #fff;
+}
+
+main .landing {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: auto;
+}
+
+main .landing .text {
+  text-align: center;
+  font-size: 1.3rem;
+  animation: text 1s linear reverse backwards;
+}
+
+@keyframes text {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+main .landing .button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: button 1s linear reverse backwards;
+}
+
+@keyframes button {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+main .landing .buy-coffee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 6px;
+  border: 1px solid #8257E5;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  color: #fff;
+}
+
+main .landing .buy-coffee:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+main .landing .leads {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: leads 1s linear reverse backwards;
+}
+
+@keyframes leads {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+main .landing .leads .texts h2 {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+main .landing .leads .texts {
+  margin-bottom: 18%;
+}
+
+main .landing .leads h2:nth-child(2) {
+  color: #000;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #8257E5;
+}
